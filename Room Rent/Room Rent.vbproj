@@ -1,0 +1,1369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5D2389A0-1FFD-4093-BF39-165F98208CAD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Room_Rent.My.MyApplication</StartupObject>
+    <RootNamespace>Room_Rent</RootNamespace>
+    <AssemblyName>Room Rent</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Room Rent.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Room Rent.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dao, Version=10.0.4504.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SMSClass">
+      <HintPath>..\..\..\Wanama Institute Software\SMSMarketing\SMSMarketing\bin\Debug\SMSClass.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Data.SqlClient" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="classes\clsCommonQueries.vb" />
+    <Compile Include="classes\clsConnection.vb" />
+    <Compile Include="classes\clsEncryption.vb" />
+    <Compile Include="classes\clsEncryption2.vb" />
+    <Compile Include="classes\clsMAC_Address.vb" />
+    <Compile Include="classes\clsPaymentDailog.vb" />
+    <Compile Include="classes\cls_ExportImport.vb" />
+    <Compile Include="classes\Email\aa_cyclotest.vb" />
+    <Compile Include="classes\Email\clsGmail.vb" />
+    <Compile Include="classes\Email\frmEmailAddress.designer.vb">
+      <DependentUpon>frmEmailAddress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="classes\Email\frmEmailAddress.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\Email\frmSetupEmail.designer.vb">
+      <DependentUpon>frmSetupEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="classes\Email\frmSetupEmail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\GSM\clsGSM_SMS.vb" />
+    <Compile Include="classes\GSM\frmBulkSMS.designer.vb">
+      <DependentUpon>frmBulkSMS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="classes\GSM\frmBulkSMS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\GSM\frmMain.designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="classes\GSM\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\GSM\frmSMSDailog.designer.vb">
+      <DependentUpon>frmSMSDailog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="classes\GSM\frmSMSDailog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\GSM\SelectSMSGateway.designer.vb">
+      <DependentUpon>SelectSMSGateway.vb</DependentUpon>
+    </Compile>
+    <Compile Include="classes\GSM\SelectSMSGateway.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblActiveWorker.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblBill.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblBillItems.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblBookingPause.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblBookingPayments.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblBookings.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblBookingStatus.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblCheckIn.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblDailyCounter.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblDocketMemo.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblEmpCheckIN.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblEmployee.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblEscortDriverInfo.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblExtraService.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblInstant.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblLocker.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblLockerBooking.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblLookUp.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblMembers.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblPayment.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblPremiumServices.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblProducts.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblRoom.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblService.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblShiftFee.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblStock.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblUserDetails.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblUserLoginInfo.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblUserRules.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblVouchers.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblWorkerFavourites.vb" />
+    <Compile Include="classes\tables\AutoCodes\cls_Temp_tblWorkers.vb" />
+    <Compile Include="classes\tables\AutoCodes\Database_tables.vb" />
+    <Compile Include="classes\tables\cls_demotablesclass.vb" />
+    <Compile Include="classes\tables\cls_tblExtraService.vb" />
+    <Compile Include="classes\tables\cls_tblMembers.vb" />
+    <Compile Include="classes\tables\cls_tblUserLoginInfo.vb" />
+    <Compile Include="classes\tables\cls_tblUserRules.vb" />
+    <Compile Include="classes\tables\cls_tblWorkers.vb" />
+    <Compile Include="classes\tables\cls_tblInstant.vb" />
+    <Compile Include="classes\tables\cls_tblService.vb" />
+    <Compile Include="classes\cls_tblSettings.vb" />
+    <Compile Include="classes\tables\cls_tblLockerBooking.vb" />
+    <Compile Include="classes\tables\cls_tblLookUp.vb" />
+    <Compile Include="classes\tables\cls_tblPayment.vb" />
+    <Compile Include="classes\tables\cls_tblShiftFee.vb" />
+    <Compile Include="classes\tables\cls_tblBillItems.vb" />
+    <Compile Include="classes\tables\cls_tblActiveWorker.vb" />
+    <Compile Include="classes\tables\cls_tblCheckIN.vb" />
+    <Compile Include="classes\frmSiteMaster.Designer.vb">
+      <DependentUpon>frmSiteMaster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="classes\frmSiteMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\frmParent.Designer.vb">
+      <DependentUpon>frmParent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="classes\frmParent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\mdlColors.vb" />
+    <Compile Include="classes\mdlDBGlobals.vb" />
+    <Compile Include="classes\mdlOpenCashDrawer.vb" />
+    <Compile Include="classes\reports\cls_Reports.vb" />
+    <Compile Include="classes\tables\cls_tblBookingPause.vb" />
+    <Compile Include="classes\tables\cls_tblSettings2.vb" />
+    <Compile Include="forms\Booking\frmCancelBookingOption.Designer.vb">
+      <DependentUpon>frmCancelBookingOption.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Booking\frmCancelBookingOption.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Booking\frmSuspendBookingOption.Designer.vb">
+      <DependentUpon>frmSuspendBookingOption.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Booking\frmSuspendBookingOption.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Payments\frmPaymentCustom.Designer.vb">
+      <DependentUpon>frmPaymentCustom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Payments\frmPaymentCustom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmLockerReport.Designer.vb">
+      <DependentUpon>frmLockerReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmLockerReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmAmenitiesReport.Designer.vb">
+      <DependentUpon>frmAmenitiesReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmAmenitiesReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmDoorReport.Designer.vb">
+      <DependentUpon>frmDoorReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmDoorReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmMerchandiseReport_ProductWse.Designer.vb">
+      <DependentUpon>frmMerchandiseReport_ProductWse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmMerchandiseReport_ProductWse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmCashOutReport.Designer.vb">
+      <DependentUpon>frmCashOutReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmCashOutReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmSPReport.Designer.vb">
+      <DependentUpon>frmSPReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmSPReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmMembershipReport.Designer.vb">
+      <DependentUpon>frmMembershipReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Details\frmMembershipReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Payments\frmPaymentEscort.Designer.vb">
+      <DependentUpon>frmPaymentEscort.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Payments\frmPaymentEscort.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\main\frmMAP_GC.Designer.vb">
+      <DependentUpon>frmMAP_GC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\main\frmMAP_GC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Booking\frmPreviousBookings.Designer.vb">
+      <DependentUpon>frmPreviousBookings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Booking\frmPreviousBookings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Booking\frmShowBooking.Designer.vb">
+      <DependentUpon>frmShowBooking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Booking\frmShowBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Booking\frmShowFavs.Designer.vb">
+      <DependentUpon>frmShowFavs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Booking\frmShowFavs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\login\frmCreateUser.designer.vb">
+      <DependentUpon>frmCreateUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\login\frmCreateUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\login\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\login\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\login\frmUser.designer.vb">
+      <DependentUpon>frmUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\login\frmUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\login\mdlLoginDetails.vb" />
+    <Compile Include="forms\print\clsReportPrint.vb" />
+    <Compile Include="forms\Report\Main Reports\frmSummaryNew.Designer.vb">
+      <DependentUpon>frmSummaryNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Main Reports\frmSummaryNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Main Reports\frmPeroidicFinancialReport2.Designer.vb">
+      <DependentUpon>frmPeroidicFinancialReport2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Main Reports\frmPeroidicFinancialReport2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Main Reports\frmReport_PERIODIC_ANALYSIS_REPORT.Designer.vb">
+      <DependentUpon>frmReport_PERIODIC_ANALYSIS_REPORT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Main Reports\frmReport_PERIODIC_ANALYSIS_REPORT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Lists\frmClearedBookings.Designer.vb">
+      <DependentUpon>frmClearedBookings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Lists\frmClearedBookings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Lists\frmSuspendedBooking.Designer.vb">
+      <DependentUpon>frmSuspendedBooking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Lists\frmSuspendedBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Lists\frmCancelledBooking.Designer.vb">
+      <DependentUpon>frmCancelledBooking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Lists\frmCancelledBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\memberships\frmMemberVisits.Designer.vb">
+      <DependentUpon>frmMemberVisits.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\memberships\frmMemberVisits.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Payments\frmPaymentOthers.Designer.vb">
+      <DependentUpon>frmPaymentOthers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Payments\frmPaymentOthers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Payments\frmPaymentBooking.Designer.vb">
+      <DependentUpon>frmPaymentBooking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Payments\frmPaymentBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\print\clsDocketPrint.vb" />
+    <Compile Include="forms\print\frmPrintCancelBooking.Designer.vb">
+      <DependentUpon>frmPrintCancelBooking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\print\frmPrintCancelBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Daily\frmDailyBooking.Designer.vb">
+      <DependentUpon>frmDailyBooking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Daily\frmDailyBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\frmDayActivity.Designer.vb">
+      <DependentUpon>frmDayActivity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\frmDayActivity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\frmDoorChargeOverall.Designer.vb">
+      <DependentUpon>frmDoorChargeOverall.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\frmDoorChargeOverall.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\frmDoorChargeReport.Designer.vb">
+      <DependentUpon>frmDoorChargeReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\frmDoorChargeReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\frmHourlyTraffic.Designer.vb">
+      <DependentUpon>frmHourlyTraffic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\frmHourlyTraffic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\frmRoomActivityReport.Designer.vb">
+      <DependentUpon>frmRoomActivityReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\frmRoomActivityReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\frmSplitReport.Designer.vb">
+      <DependentUpon>frmSplitReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\frmSplitReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\frmSPAcitvityReport.Designer.vb">
+      <DependentUpon>frmSPAcitvityReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\frmSPAcitvityReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\frmSPIncomeReport.Designer.vb">
+      <DependentUpon>frmSPIncomeReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\frmSPIncomeReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\frmWeeklyBookingReport.Designer.vb">
+      <DependentUpon>frmWeeklyBookingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\frmWeeklyBookingReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Training Adjustment Report\frmBookingReportClearing2.Designer.vb">
+      <DependentUpon>frmBookingReportClearing2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Training Adjustment Report\frmBookingReportClearing2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Training Adjustment Report\frmAdjustReport.Designer.vb">
+      <DependentUpon>frmAdjustReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Training Adjustment Report\frmAdjustReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Simple\frmBookingDelete.Designer.vb">
+      <DependentUpon>frmBookingDelete.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Simple\frmBookingDelete.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Main Reports\frmSummary.Designer.vb">
+      <DependentUpon>frmSummary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Main Reports\frmSummary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\print\frmShowMemo.Designer.vb">
+      <DependentUpon>frmShowMemo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\print\frmShowMemo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmCustomTime.Designer.vb">
+      <DependentUpon>frmCustomTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmCustomTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmCutomPrice.Designer.vb">
+      <DependentUpon>frmCutomPrice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmCutomPrice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectNoOfClients.Designer.vb">
+      <DependentUpon>frmSelectNoOfClients.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectNoOfClients.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectShift.Designer.vb">
+      <DependentUpon>frmSelectShift.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectShift.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectSP.Designer.vb">
+      <DependentUpon>frmSelectSP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectSP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmServiceTime.Designer.vb">
+      <DependentUpon>frmServiceTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmServiceTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Booking\frmSuspensions.Designer.vb">
+      <DependentUpon>frmSuspensions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Booking\frmSuspensions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\merchandise\frmAddMerchandise.Designer.vb">
+      <DependentUpon>frmAddMerchandise.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\merchandise\frmAddMerchandise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\merchandise\frmMerchandiseSale.Designer.vb">
+      <DependentUpon>frmMerchandiseSale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\merchandise\frmMerchandiseSale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\payroll\frmEmployee.Designer.vb">
+      <DependentUpon>frmEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\payroll\frmEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\payroll\frmIncentives.Designer.vb">
+      <DependentUpon>frmIncentives.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\payroll\frmIncentives.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\payroll\frmPayIncrease.Designer.vb">
+      <DependentUpon>frmPayIncrease.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\payroll\frmPayIncrease.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\payroll\frmPayReports.Designer.vb">
+      <DependentUpon>frmPayReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\payroll\frmPayReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\payroll\frmPaySlips.Designer.vb">
+      <DependentUpon>frmPaySlips.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\payroll\frmPaySlips.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\payroll\frmSignIn.Designer.vb">
+      <DependentUpon>frmSignIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\payroll\frmSignIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\payroll\frmSalaryPayment.Designer.vb">
+      <DependentUpon>frmSalaryPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\payroll\frmSalaryPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\settings\frmCancellationFees.Designer.vb">
+      <DependentUpon>frmCancellationFees.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\settings\frmCancellationFees.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\settings\frmConnection.Designer.vb">
+      <DependentUpon>frmConnection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\settings\frmConnection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\settings\frmEscortServices.Designer.vb">
+      <DependentUpon>frmEscortServices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\settings\frmEscortServices.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\settings\frmLookUpGenerator.Designer.vb">
+      <DependentUpon>frmLookUpGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\settings\frmLookUpGenerator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\settings\frmPremiumServices.Designer.vb">
+      <DependentUpon>frmPremiumServices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\settings\frmPremiumServices.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgAmount2Numeric.Designer.vb">
+      <DependentUpon>dlgAmount2Numeric.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgAmount2Numeric.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgPass.Designer.vb">
+      <DependentUpon>dlgPass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgPass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgMembership.Designer.vb">
+      <DependentUpon>dlgMembership.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgMembership.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgMessage2.Designer.vb">
+      <DependentUpon>dlgMessage2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgMessage2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgMessage.Designer.vb">
+      <DependentUpon>dlgMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgMessage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgReason.Designer.vb">
+      <DependentUpon>dlgReason.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgReason.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgPreBookingEditMenu.Designer.vb">
+      <DependentUpon>dlgPreBookingEditMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgPreBookingEditMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectSPAddToActiveRoom.Designer.vb">
+      <DependentUpon>frmSelectSPAddToActiveRoom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectSPAddToActiveRoom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectSPClearFinished.Designer.vb">
+      <DependentUpon>frmSelectSPClearFinished.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectSPClearFinished.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Booking\frmVoucherAdd.Designer.vb">
+      <DependentUpon>frmVoucherAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Booking\frmVoucherAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Booking\frmVoucherLink.Designer.vb">
+      <DependentUpon>frmVoucherLink.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Booking\frmVoucherLink.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controls\MyKeyborad\clsKeyBoard.vb" />
+    <Compile Include="controls\MyKeyborad\frmMyNumericKeyboard.Designer.vb">
+      <DependentUpon>frmMyNumericKeyboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controls\MyKeyborad\frmMyNumericKeyboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controls\MyKeyborad\frmTestForm.Designer.vb">
+      <DependentUpon>frmTestForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controls\MyKeyborad\frmTestForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Graph\frmDoorChargeChart.Designer.vb">
+      <DependentUpon>frmDoorChargeChart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Graph\frmDoorChargeChart.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Lockers\frmLockers2.Designer.vb">
+      <DependentUpon>frmLockers2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Lockers\frmLockers2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgEscortDriveInfo.Designer.vb">
+      <DependentUpon>dlgEscortDriveInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgEscortDriveInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgAdminPass.Designer.vb">
+      <DependentUpon>dlgAdminPass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgAdminPass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectEnterClientName.Designer.vb">
+      <DependentUpon>frmSelectEnterClientName.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectEnterClientName.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectRoom.Designer.vb">
+      <DependentUpon>frmSelectRoom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectRoom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectClientMember.Designer.vb">
+      <DependentUpon>frmSelectClientMember.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectClientMember.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectBookingDate.Designer.vb">
+      <DependentUpon>frmSelectBookingDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SelectForms\frmSelectBookingDate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\main\frmHome.Designer.vb">
+      <DependentUpon>frmHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\main\frmHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\settings\frmAdmin.Designer.vb">
+      <DependentUpon>frmAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\settings\frmAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgRoomStatus.Designer.vb">
+      <DependentUpon>dlgRoomStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgRoomStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Worker\frmFavorites.Designer.vb">
+      <DependentUpon>frmFavorites.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Worker\frmFavorites.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Worker\frmSetWorkerNotAvailable.Designer.vb">
+      <DependentUpon>frmSetWorkerNotAvailable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Worker\frmSetWorkerNotAvailable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Worker\frmShowSpDC.Designer.vb">
+      <DependentUpon>frmShowSpDC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Worker\frmShowSpDC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Worker\frmSPNotAvailableList.Designer.vb">
+      <DependentUpon>frmSPNotAvailableList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Worker\frmSPNotAvailableList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Worker\frmWorkerLookUp.Designer.vb">
+      <DependentUpon>frmWorkerLookUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Worker\frmWorkerLookUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\main\frmPreBookingHome.Designer.vb">
+      <DependentUpon>frmPreBookingHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\main\frmPreBookingHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Worker\frmCreateWorker.Designer.vb">
+      <DependentUpon>frmCreateWorker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Worker\frmCreateWorker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Worker\frmWorkerLogin.Designer.vb">
+      <DependentUpon>frmWorkerLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Worker\frmWorkerLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgAmount.Designer.vb">
+      <DependentUpon>dlgAmount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgAmount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgEditBooking.Designer.vb">
+      <DependentUpon>dlgEditBooking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgEditBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgCustomTime.Designer.vb">
+      <DependentUpon>dlgCustomTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\small dialogs and menus\dlgCustomTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\mdlGlobals.vb" />
+    <Compile Include="forms\memberships\frmMembership.Designer.vb">
+      <DependentUpon>frmMembership.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\memberships\frmMembership.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Graph\frmWeekCollectionBookingSplit.Designer.vb">
+      <DependentUpon>frmWeekCollectionBookingSplit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Graph\frmWeekCollectionBookingSplit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Graph\frmWeekCollectionBookingWorkerWise.Designer.vb">
+      <DependentUpon>frmWeekCollectionBookingWorkerWise.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Graph\frmWeekCollectionBookingWorkerWise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controls\MyKeyborad\MyNumericKeyBoard.Designer.vb">
+      <DependentUpon>MyNumericKeyBoard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="controls\MyKeyborad\MyNumericKeyBoard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\print\frmPrintPrevious.Designer.vb">
+      <DependentUpon>frmPrintPrevious.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\print\frmPrintPrevious.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWpfTestForm.Designer.vb">
+      <DependentUpon>frmWpfTestForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmWpfTestForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="controls\NumericTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="forms\print\frmPrintSuspension.Designer.vb">
+      <DependentUpon>frmPrintSuspension.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\print\frmPrintSuspension.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\print\frmPrintList.Designer.vb">
+      <DependentUpon>frmPrintList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\print\frmPrintList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Graph\frmWeekCollectionBooking.Designer.vb">
+      <DependentUpon>frmWeekCollectionBooking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Graph\frmWeekCollectionBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Report\Graph\frmWeekCollectionDoorCharge.Designer.vb">
+      <DependentUpon>frmWeekCollectionDoorCharge.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Report\Graph\frmWeekCollectionDoorCharge.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="some test\frmMaptest.Designer.vb">
+      <DependentUpon>frmMaptest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="some test\frmMaptest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="some test\frmTest2.Designer.vb">
+      <DependentUpon>frmTest2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="some test\frmTest2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="some test\frmTest3.Designer.vb">
+      <DependentUpon>frmTest3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="some test\frmTest3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="some test\frmTets1.Designer.vb">
+      <DependentUpon>frmTets1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="some test\frmTets1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControl1.xaml.vb">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="classes\Email\frmEmailAddress.resx">
+      <DependentUpon>frmEmailAddress.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\Email\frmSetupEmail.resx">
+      <DependentUpon>frmSetupEmail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\frmSiteMaster.resx">
+      <DependentUpon>frmSiteMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\frmParent.resx">
+      <DependentUpon>frmParent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\GSM\frmBulkSMS.resx">
+      <DependentUpon>frmBulkSMS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\GSM\frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\GSM\frmSMSDailog.resx">
+      <DependentUpon>frmSMSDailog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="classes\GSM\SelectSMSGateway.resx">
+      <DependentUpon>SelectSMSGateway.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Booking\frmCancelBookingOption.resx">
+      <DependentUpon>frmCancelBookingOption.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Booking\frmSuspendBookingOption.resx">
+      <DependentUpon>frmSuspendBookingOption.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Payments\frmPaymentCustom.resx">
+      <DependentUpon>frmPaymentCustom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Details\frmLockerReport.resx">
+      <DependentUpon>frmLockerReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Details\frmAmenitiesReport.resx">
+      <DependentUpon>frmAmenitiesReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Details\frmDoorReport.resx">
+      <DependentUpon>frmDoorReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Details\frmMerchandiseReport_ProductWse.resx">
+      <DependentUpon>frmMerchandiseReport_ProductWse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Details\frmCashOutReport.resx">
+      <DependentUpon>frmCashOutReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Details\frmSPReport.resx">
+      <DependentUpon>frmSPReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Details\frmMembershipReport.resx">
+      <DependentUpon>frmMembershipReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Payments\frmPaymentEscort.resx">
+      <DependentUpon>frmPaymentEscort.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\main\frmMAP_GC.resx">
+      <DependentUpon>frmMAP_GC.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Booking\frmPreviousBookings.resx">
+      <DependentUpon>frmPreviousBookings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Booking\frmShowBooking.resx">
+      <DependentUpon>frmShowBooking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Booking\frmShowFavs.resx">
+      <DependentUpon>frmShowFavs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\login\frmCreateUser.resx">
+      <DependentUpon>frmCreateUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\login\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\login\frmUser.resx">
+      <DependentUpon>frmUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Main Reports\frmSummaryNew.resx">
+      <DependentUpon>frmSummaryNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Main Reports\frmPeroidicFinancialReport2.resx">
+      <DependentUpon>frmPeroidicFinancialReport2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\frmDayActivity.resx">
+      <DependentUpon>frmDayActivity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\frmHourlyTraffic.resx">
+      <DependentUpon>frmHourlyTraffic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Main Reports\frmReport_PERIODIC_ANALYSIS_REPORT.resx">
+      <DependentUpon>frmReport_PERIODIC_ANALYSIS_REPORT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\frmRoomActivityReport.resx">
+      <DependentUpon>frmRoomActivityReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Lists\frmClearedBookings.resx">
+      <DependentUpon>frmClearedBookings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Lists\frmSuspendedBooking.resx">
+      <DependentUpon>frmSuspendedBooking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Lists\frmCancelledBooking.resx">
+      <DependentUpon>frmCancelledBooking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\memberships\frmMemberVisits.resx">
+      <DependentUpon>frmMemberVisits.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Payments\frmPaymentOthers.resx">
+      <DependentUpon>frmPaymentOthers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Payments\frmPaymentBooking.resx">
+      <DependentUpon>frmPaymentBooking.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\print\frmPrintCancelBooking.resx">
+      <DependentUpon>frmPrintCancelBooking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Daily\frmDailyBooking.resx">
+      <DependentUpon>frmDailyBooking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\frmDoorChargeOverall.resx">
+      <DependentUpon>frmDoorChargeOverall.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\frmDoorChargeReport.resx">
+      <DependentUpon>frmDoorChargeReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\frmSplitReport.resx">
+      <DependentUpon>frmSplitReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\frmWeeklyBookingReport.resx">
+      <DependentUpon>frmWeeklyBookingReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\frmSPAcitvityReport.resx">
+      <DependentUpon>frmSPAcitvityReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\frmSPIncomeReport.resx">
+      <DependentUpon>frmSPIncomeReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Training Adjustment Report\frmBookingReportClearing2.resx">
+      <DependentUpon>frmBookingReportClearing2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Training Adjustment Report\frmAdjustReport.resx">
+      <DependentUpon>frmAdjustReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Simple\frmBookingDelete.resx">
+      <DependentUpon>frmBookingDelete.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Main Reports\frmSummary.resx">
+      <DependentUpon>frmSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\print\frmShowMemo.resx">
+      <DependentUpon>frmShowMemo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SelectForms\frmCustomTime.resx">
+      <DependentUpon>frmCustomTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SelectForms\frmCutomPrice.resx">
+      <DependentUpon>frmCutomPrice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SelectForms\frmSelectNoOfClients.resx">
+      <DependentUpon>frmSelectNoOfClients.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SelectForms\frmSelectShift.resx">
+      <DependentUpon>frmSelectShift.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SelectForms\frmSelectSP.resx">
+      <DependentUpon>frmSelectSP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SelectForms\frmServiceTime.resx">
+      <DependentUpon>frmServiceTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Booking\frmSuspensions.resx">
+      <DependentUpon>frmSuspensions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\merchandise\frmAddMerchandise.resx">
+      <DependentUpon>frmAddMerchandise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\merchandise\frmMerchandiseSale.resx">
+      <DependentUpon>frmMerchandiseSale.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\payroll\frmEmployee.resx">
+      <DependentUpon>frmEmployee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\payroll\frmIncentives.resx">
+      <DependentUpon>frmIncentives.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\payroll\frmPayIncrease.resx">
+      <DependentUpon>frmPayIncrease.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\settings\frmCancellationFees.resx">
+      <DependentUpon>frmCancellationFees.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\settings\frmConnection.resx">
+      <DependentUpon>frmConnection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\settings\frmEscortServices.resx">
+      <DependentUpon>frmEscortServices.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\settings\frmLookUpGenerator.resx">
+      <DependentUpon>frmLookUpGenerator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\settings\frmPremiumServices.resx">
+      <DependentUpon>frmPremiumServices.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgAmount2Numeric.resx">
+      <DependentUpon>dlgAmount2Numeric.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgPass.resx">
+      <DependentUpon>dlgPass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgMembership.resx">
+      <DependentUpon>dlgMembership.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgMessage2.resx">
+      <DependentUpon>dlgMessage2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgMessage.resx">
+      <DependentUpon>dlgMessage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgReason.resx">
+      <DependentUpon>dlgReason.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgPreBookingEditMenu.resx">
+      <DependentUpon>dlgPreBookingEditMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SelectForms\frmSelectSPAddToActiveRoom.resx">
+      <DependentUpon>frmSelectSPAddToActiveRoom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SelectForms\frmSelectSPClearFinished.resx">
+      <DependentUpon>frmSelectSPClearFinished.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Booking\frmVoucherAdd.resx">
+      <DependentUpon>frmVoucherAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Booking\frmVoucherLink.resx">
+      <DependentUpon>frmVoucherLink.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Graph\frmDoorChargeChart.resx">
+      <DependentUpon>frmDoorChargeChart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Lockers\frmLockers2.resx">
+      <DependentUpon>frmLockers2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgEscortDriveInfo.resx">
+      <DependentUpon>dlgEscortDriveInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgAdminPass.resx">
+      <DependentUpon>dlgAdminPass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SelectForms\frmSelectEnterClientName.resx">
+      <DependentUpon>frmSelectEnterClientName.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SelectForms\frmSelectRoom.resx">
+      <DependentUpon>frmSelectRoom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SelectForms\frmSelectClientMember.resx">
+      <DependentUpon>frmSelectClientMember.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SelectForms\frmSelectBookingDate.resx">
+      <DependentUpon>frmSelectBookingDate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\settings\frmAdmin.resx">
+      <DependentUpon>frmAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgRoomStatus.resx">
+      <DependentUpon>dlgRoomStatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Worker\frmFavorites.resx">
+      <DependentUpon>frmFavorites.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Worker\frmSetWorkerNotAvailable.resx">
+      <DependentUpon>frmSetWorkerNotAvailable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Worker\frmShowSpDC.resx">
+      <DependentUpon>frmShowSpDC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Worker\frmSPNotAvailableList.resx">
+      <DependentUpon>frmSPNotAvailableList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Worker\frmWorkerLookUp.resx">
+      <DependentUpon>frmWorkerLookUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\main\frmPreBookingHome.resx">
+      <DependentUpon>frmPreBookingHome.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\main\frmHome.resx">
+      <DependentUpon>frmHome.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Worker\frmCreateWorker.resx">
+      <DependentUpon>frmCreateWorker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Worker\frmWorkerLogin.resx">
+      <DependentUpon>frmWorkerLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgAmount.resx">
+      <DependentUpon>dlgAmount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgEditBooking.resx">
+      <DependentUpon>dlgEditBooking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\small dialogs and menus\dlgCustomTime.resx">
+      <DependentUpon>dlgCustomTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\memberships\frmMembership.resx">
+      <DependentUpon>frmMembership.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Graph\frmWeekCollectionBookingSplit.resx">
+      <DependentUpon>frmWeekCollectionBookingSplit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Graph\frmWeekCollectionBookingWorkerWise.resx">
+      <DependentUpon>frmWeekCollectionBookingWorkerWise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\MyKeyborad\frmMyNumericKeyboard.resx">
+      <DependentUpon>frmMyNumericKeyboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\MyKeyborad\frmTestForm.resx">
+      <DependentUpon>frmTestForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\MyKeyborad\MyNumericKeyBoard.resx">
+      <DependentUpon>MyNumericKeyBoard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\print\frmPrintPrevious.resx">
+      <DependentUpon>frmPrintPrevious.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWpfTestForm.resx">
+      <DependentUpon>frmWpfTestForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\print\frmPrintSuspension.resx">
+      <DependentUpon>frmPrintSuspension.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\print\frmPrintList.resx">
+      <DependentUpon>frmPrintList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Graph\frmWeekCollectionBooking.resx">
+      <DependentUpon>frmWeekCollectionBooking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Report\Graph\frmWeekCollectionDoorCharge.resx">
+      <DependentUpon>frmWeekCollectionDoorCharge.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="some test\frmMaptest.resx">
+      <DependentUpon>frmMaptest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="some test\frmTest2.resx">
+      <DependentUpon>frmTest2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="some test\frmTest3.resx">
+      <DependentUpon>frmTest3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="some test\frmTets1.resx">
+      <DependentUpon>frmTets1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\shield question.png" />
+    <None Include="Resources\other_card.jpg" />
+    <None Include="Resources\amex.jpg" />
+    <Content Include="postbuild obfuscate.txt" />
+    <None Include="Resources\mastercard.jpg" />
+    <None Include="Resources\visa.jpg" />
+    <None Include="Resources\eftpos.jpg" />
+    <Content Include="Resources\KeysMapping.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files (x86)\Inno Setup 5\Compil32.exe" /cc "D:\Paid Projects\Rent Management\Room Rent\Setup\Room Rent Setup.iss"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,15 @@
+
+        ds.Tables.Add(GetPrimarKeys(objCon.connect))
+
+        Dim BF As New System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
+        Dim MS As New System.IO.MemoryStream()
+        BF.Serialize(MS, ds)
+
+        Dim sr As New IO.StreamReader(MS)
+        Dim StringContent As String = sr.ReadToEnd
+        Dim objEncryption As New clsEncryption
+
+        Dim EncryptedContent As String = objEncryption.Encrypt(sr.ReadToEnd)
+
+
+        My.Computer.FileSystem.WriteAllBytes(FileName, MS.GetBuffer(), False)

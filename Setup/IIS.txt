@@ -1,0 +1,164 @@
+var
+  global_AppCmdFilePath :String;
+  global_IsIIS7 :Boolean;
+  global_WebSites :SiteList;
+  global_WebSiteName :String;
+  global_vDir :String;
+  global_AppCmdExitCode :Integer;
+
+const
+  IISServerName = 'localhost';
+  IISApplicationPoolName = 'Test Pool';
+
+  ERROR_NOT_FOUND = 1168;
+  ERROR_NOT_SUPPORTED = 50;
+
+  MD_APPPOOL_IDENTITY_TYPE_LOCALSYSTEM = 0;
+  MD_APPPOOL_IDENTITY_TYPE_LOCALSERVICE = 1;
+  MD_APPPOOL_IDENTITY_TYPE_NETWORKSERVICE = 2;
+  MD_APPPOOL_IDENTITY_TYPE_SPECIFICUSER = 3;
+
+  MD_LOGON_INTERACTIVE = 0;
+  MD_LOGON_BATCH = 1;
+  MD_LOGON_NETWORK = 2;
+  MD_LOGON_NETWORK_CLEARTEXT = 3;
+
+function ExecAppCmd(params :String) :Boolean;
+var
+  execSuccessfully :Boolean;
+  resultCode :Integer;
+begin
+  execSuccessfully := Exec('cmd.exe', '/c ' + global_AppCmdFilePath + ' ' + params, '', SW_HIDE, ewWaitUntilTerminated, resultCode);
+
+  global_AppCmdExitCode := resultCode;
+
+  Result := execSuccessfully and (resultCode = 0);
+end;
+
+
+function CreateVirtualDirectoryForIIS6(physicalPath :String) :String;
+var
+  IIS, webService, webServer, webRoot, vDir, vDirApp :Variant;
+  appPools, appPool :Variant;
+  webSiteId :String;
+begin
+  webSiteId := GetWebSiteIdByName(global_WebSiteName);
+
+  // Create the main IIS COM Automation object.
+  IIS := CreateOleObject('IISNamespace');
+
+  // Get application pools.
+  appPools := IIS.GetObject('IIsApplicationPools', 'localhost/W3SVC/AppPools');
+
+  try
+    // Check if the application pool already exists.    
+    appPool := appPools.GetObject('IIsApplicationPool', IISApplicationPoolName);
+  except
+    // Crete the application pool.
+    try
+      appPool := appPools.Create('IIsApplicationPool', IISApplicationPoolName);
+
+      appPool.LogonMethod := MD_LOGON_NETWORK_CLEARTEXT;
+      appPool.AppPoolIdentityType := MD_APPPOOL_IDENTITY_TYPE_NETWORKSERVICE;
+
+      appPool.SetInfo();
+    except
+      Result := 'Failed to create an apllication pool.';
+      Exit;
+    end;
+  end;
+
+  // Connect to the IIS server.
+  webService := IIS.GetObject('IIsWebService', IISServerName + '/w3svc');
+
+  // Get the website.  
+  webServer := webService.GetObject('IIsWebServer', webSiteId);
+  webRoot := webServer.GetObject('IIsWebVirtualDir', 'Root');
+
+  // Delete the virtual dir if it already exists.
+  try
+    webRoot.Delete('IIsWebVirtualDir', global_vDir);
+    webRoot.SetInfo();
+  except
+    // An exception will be raised if there is not such a website.
+  end;
+
+  // Create the virtual directory.
+  try
+    vDir := WebRoot.Create('IIsWebVirtualDir', global_vDir);
+
+    vDir.AccessRead := True;
+    vDir.AccessScript := True;
+    vDir.AppFriendlyName := 'Test friendly name';
+    vDir.Path := physicalPath;
+
+    vDir.AppCreate(False);
+
+    vDir.SetInfo();
+  except
+    Result := 'Failed to create a virtual directory.';
+    Exit;
+  end;
+
+  // Assign the application pool to the virtual directory.
+  try
+    vDir := webRoot.GetObject('IIsWebVirtualDir', global_vDir);
+
+    vDir.AppPoolId := IISApplicationPoolName;
+
+    vDir.SetInfo();
+  except
+    Result := 'Failed to assign the application pool to the virtual directory.';
+    Exit;
+  end;
+end;
+
+function CreateVirtualDirectoryForIIS7(physicalPath :String) :String;
+var
+  tempFileName :String;
+  appPoolList :String;
+  createAppPool :Boolean;
+begin
+  // Delete the application if it already exists.
+  if not ExecAppCmd(Format('delete app "%s/%s"', [global_WebSiteName, global_vDir])) then
+  begin
+    if (global_AppCmdExitCode <> ERROR_NOT_FOUND) and (global_AppCmdExitCode <> ERROR_NOT_SUPPORTED) then
+    begin
+      Result := 'Failed to delete the application.  ' + GetErrorMessageByCode(global_AppCmdExitCode);
+      Exit;
+    end;
+  end;
+
+  // Check if the application pool already exists.
+  tempFileName := ExpandConstant('{tmp}\AppPoolNames.txt');
+
+  ExecAppCmd(Format('list apppool "%s" > "%s"', [IISApplicationPoolName, tempFileName]));
+
+  if (LoadStringFromFile(tempFileName, appPoolList)) then
+  begin
+    createAppPool := (Pos(IISApplicationPoolName, appPoolList) = 0);
+  end
+  else
+  begin
+    createAppPool := True;
+  end;
+
+  // Create the application pool.
+  if (createAppPool) then
+  begin
+    if not ExecAppCmd(Format('add apppool /name:"%s" /managedRuntimeVersion:v4.0', [IISApplicationPoolName])) then
+    begin
+      Result := 'Failed to add the application pool. ' + GetErrorMessageByCode(global_AppCmdExitCode);
+      Exit;
+    end;
+  end;
+
+  // Create the application.
+  if not ExecAppCmd(Format('add app /site.name:"%s" /path:"/%s" /physicalPath:"%s" /applicationPool:"%s"', [global_WebSiteName, global_vDir, physicalPath, IISApplicationPoolName])) then
+  begin
+    Result := 'Failed to add the application. ' + GetErrorMessageByCode(global_AppCmdExitCode);
+    Exit;
+  end;
+
+  Result := '';
+end;

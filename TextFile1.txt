@@ -1,0 +1,8 @@
+
+        Dim sr As New IO.StreamReader(MS)
+        Dim StringContent As String = sr.ReadToEnd
+        Dim objEncryption As New clsEncryption
+
+        Dim EncryptedContent As String = objEncryption.Encrypt(sr.ReadToEnd)
+
+        My.Computer.FileSystem.WriteAllText(FileName, EncryptedContent, False)

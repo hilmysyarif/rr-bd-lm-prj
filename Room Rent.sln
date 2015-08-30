@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Room Rent", "Room Rent\Room Rent.vbproj", "{5D2389A0-1FFD-4093-BF39-165F98208CAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{18AACD26-50DA-4B72-A38C-CD3C899B30C5}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
+		TextFile2.txt = TextFile2.txt
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CheckCashDrawer", "CheckCashDrawer\CheckCashDrawer.vbproj", "{75350083-E85E-4DF6-A86B-3D2BB9A3FB05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D2389A0-1FFD-4093-BF39-165F98208CAD}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5D2389A0-1FFD-4093-BF39-165F98208CAD}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{5D2389A0-1FFD-4093-BF39-165F98208CAD}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{5D2389A0-1FFD-4093-BF39-165F98208CAD}.Debug|x86.ActiveCfg = Debug|x86
+		{5D2389A0-1FFD-4093-BF39-165F98208CAD}.Debug|x86.Build.0 = Debug|x86
+		{5D2389A0-1FFD-4093-BF39-165F98208CAD}.Release|Any CPU.ActiveCfg = Release|x86
+		{5D2389A0-1FFD-4093-BF39-165F98208CAD}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{5D2389A0-1FFD-4093-BF39-165F98208CAD}.Release|Mixed Platforms.Build.0 = Release|x86
+		{5D2389A0-1FFD-4093-BF39-165F98208CAD}.Release|x86.ActiveCfg = Release|x86
+		{5D2389A0-1FFD-4093-BF39-165F98208CAD}.Release|x86.Build.0 = Release|x86
+		{75350083-E85E-4DF6-A86B-3D2BB9A3FB05}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{75350083-E85E-4DF6-A86B-3D2BB9A3FB05}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{75350083-E85E-4DF6-A86B-3D2BB9A3FB05}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{75350083-E85E-4DF6-A86B-3D2BB9A3FB05}.Debug|x86.ActiveCfg = Debug|x86
+		{75350083-E85E-4DF6-A86B-3D2BB9A3FB05}.Debug|x86.Build.0 = Debug|x86
+		{75350083-E85E-4DF6-A86B-3D2BB9A3FB05}.Release|Any CPU.ActiveCfg = Release|x86
+		{75350083-E85E-4DF6-A86B-3D2BB9A3FB05}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{75350083-E85E-4DF6-A86B-3D2BB9A3FB05}.Release|Mixed Platforms.Build.0 = Release|x86
+		{75350083-E85E-4DF6-A86B-3D2BB9A3FB05}.Release|x86.ActiveCfg = Release|x86
+		{75350083-E85E-4DF6-A86B-3D2BB9A3FB05}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
